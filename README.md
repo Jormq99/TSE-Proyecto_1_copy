@@ -176,3 +176,43 @@ pyhton3 incluir.py
 El resultado se debe ver algo como esto 
 ![image](https://github.com/Jormq99/TSE-proyecto1/assets/99856936/f1d7002c-7bbd-41dc-a211-d370bc6ca071)
 
+
+## 3.Configurar mi imagen para incluir OpenVino
+Para esto primero debemos descargar los repositorios donde se inlcuyen las herramientas necesarias para agregar el ambiente de Intel, este proceso se basa en la página [Agregar OpenVINO Toolkit](https://docs.openvino.ai/2023.0/openvino_docs_install_guides_installing_openvino_yocto.html), sin embargo se deben hacer algunas configuraciones para que sea complatible con la versión `kirkstone`
+```bash
+git clone -b kirkstone https://git.yoctoproject.org/meta-intel
+git clone -b kirkstone https://github.com/kraj/meta-clang.git
+```
+
+Una vez que los repositorios están descragados se pueden agregar a las capas de forma manual o con los comandos
+
+```bash
+bitbake-layers add-layer meta-intel
+bitbake-layers add-layer meta-clang
+```
+> [!WARNING] 
+> Para trabajar con otras versiones se debe indicar esta después del comando -b
+> Si los repos no se hacen después de cargar los recursos de poky se debe especificar la ubicación de estos
+
+Para finalizar la configuración se debe modificar el archivo `local.conf`, para indicar motores de inferencia y otras características
+
+```vim
+PACKAGECONFIG:append:pn-openvino-inference-engine = " opencl"
+PACKAGECONFIG:append:pn-openvino-inference-engine = " python3"
+
+IMAGE_INSTALL:append = " \
+                 example \
+                 python3-pip \
+                 python3-pygobject \
+                 python3-paramiko \
+                 vim \
+                 openssh \
+                 opencv \
+		 git \
+		 openvino-inference-engine \
+		 openvino-inference-engine-samples \
+		 openvino-inference-engine-python3 \
+		 openvino-model-optimizer \
+                "
+```
+Con esto se agregan herramientas y la distribución de `OpenVino`
