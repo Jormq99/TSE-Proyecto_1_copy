@@ -192,6 +192,7 @@ bitbake-layers add-layer meta-clang
 ```
 > [!WARNING] 
 > Para trabajar con otras versiones se debe indicar esta después del comando -b
+
 > [!NOTE]
 > Si los repos no se hacen después de cargar los recursos de poky se debe especificar la ubicación de estos
 
