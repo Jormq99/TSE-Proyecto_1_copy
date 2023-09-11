@@ -177,7 +177,7 @@ El resultado se debe ver algo como esto
 ![image](https://github.com/Jormq99/TSE-proyecto1/assets/99856936/f1d7002c-7bbd-41dc-a211-d370bc6ca071)
 
 
-## 3.Configurar mi imagen para incluir OpenVino
+## 4.Configurar mi imagen para incluir OpenVino
 Para esto primero debemos descargar los repositorios donde se inlcuyen las herramientas necesarias para agregar el ambiente de Intel, este proceso se basa en la página [Agregar OpenVINO Toolkit](https://docs.openvino.ai/2023.0/openvino_docs_install_guides_installing_openvino_yocto.html), sin embargo se deben hacer algunas configuraciones para que sea complatible con la versión `kirkstone`
 ```bash
 git clone -b kirkstone https://git.yoctoproject.org/meta-intel
