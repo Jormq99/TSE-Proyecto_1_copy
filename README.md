@@ -218,3 +218,37 @@ IMAGE_INSTALL:append = " \
                 "
 ```
 Con esto se agregan herramientas y la distribución de `OpenVino`
+
+> [!WARNING] 
+> Los modelos OpenVino traen sus sistemas entrenados en la red por lo que es importante establecer una conexión a la red
+
+### Configuración de Ethernet
+Debido a que se debe descargar información es necesario configurar nuestra máquina virtual, para ello se le deden asignar permisos desde la aplicación de VirtualBox, por lo que se debe tener la computadora virtual apagada y proceder a darle acceso a nuestra red, para ello se hacer los siguientes cambios
+```tree
+TSE/
+
+Configuraciones/
+	RED
+	->Adaptador 1
+	  ->Adapatdator de puente
+	  ->Permitir todos
+```
+
+Una vez que se tiene esto se debe incluir a los archivos de la imagen un doc llamado `red.sh` este archivo debe ser **_bash_** para que la configuración se pueda realizar y el código sería
+
+```bash
+ifconfig eth0 up
+udhcpc -i eth0
+```
+Una vez construida la imagen verificamos la configuracon de red que tienen inicialmente
+![image](https://github.com/Jormq99/TSE-Proyecto_1_copy/assets/99856936/67c20a33-a7d0-4ff6-89ee-edebf262ae85)
+
+Y se procede a correr el comando para obetener la IP adecuada a partir de un broadcasting dicover 
+```bash
+bash red.sh
+```
+Lo que debría dar como resultado
+
+![image](https://github.com/Jormq99/TSE-Proyecto_1_copy/assets/99856936/02f37803-97b6-4177-8aa4-2f6162775f1d)
+
+
