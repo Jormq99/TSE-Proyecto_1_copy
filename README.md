@@ -58,6 +58,21 @@ Para agregar recetas a la imagen se descarga del repositorio de kirkstone la ram
 ```bash
 git clone -b kirkstone https://github.com/openembedded/meta-openembedded.git
 ```
+Durante la creación se encontraron errores con diversas metas, debido a que no tienen compatibilidad con la versión `Kirkstone`, mostrando el siguiente error
+>ERROR! Branch kirkstone in https://github.com/Xilinx/meta-jupyter.git does nor exist!
+
+Si se ejecuta el comando de forma general sin buscar la compatibilidad con el comando 
+
+```bash
+git clone https://github.com/Xilinx/meta-jupyter.git
+```
+Se produce un error integración al sistema al ambiente que estamos desarrollando, donde se muestra
+
+>ERROR! repository avaible with Langdale version, try to chance branch
+>Using checkout or command -b "branch name"
+
+Por lo que suspendió el uso de esta meta de momento.
+
 Y una vez que se tiene esto, usamos el comando:
 ```bash
 bitbake-layers add-layer meta-openembedded/meta-oe
@@ -217,6 +232,34 @@ IMAGE_INSTALL:append = " \
 		 openvino-model-optimizer \
                 "
 ```
+
+>ERROR! el siguiente error se generó debido a no agregar la receta de MATPLOTLIB al local.conf
+![image](https://github.com/browserify/syntax-error/assets/99856936/cd61c034-2191-4fb3-8da1-249b22e24a03)
+
+Por ello se agrega la librería de python correspondiente dando como resultado la configuración
+
+```vim
+PACKAGECONFIG:append:pn-openvino-inference-engine = " opencl"
+PACKAGECONFIG:append:pn-openvino-inference-engine = " python3"
+
+IMAGE_INSTALL:append = " \
+                 example \
+                 python3-pip \
+                 python3-pygobject \
+                 python3-paramiko \
+		 python3-matplotlib \
+                 vim \
+                 openssh \
+                 opencv \
+		 git \
+		 openvino-inference-engine \
+		 openvino-inference-engine-samples \
+		 openvino-inference-engine-python3 \
+		 openvino-model-optimizer \
+                "
+```
+
+
 Con esto se agregan herramientas y la distribución de `OpenVino`
 
 > [!WARNING] 
