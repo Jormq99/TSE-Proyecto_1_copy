@@ -314,3 +314,6 @@ VIDEO_TOOLS = " \
            "
 ```
 
+Resultado Final
+
+![image](https://github.com/Jormq99/TSE-proyecto1/assets/99856936/847ceaaa-4fdd-4574-a7d3-6a3b3d954a6b)
