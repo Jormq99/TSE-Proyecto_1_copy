@@ -299,7 +299,7 @@ Lo que debría dar como resultado
 
 
 >ERROR! Una vez se corrió el modelo se produjo el siguiente error
-![image](https://github.com/browserify/syntax-error/assets/99856936/45fc1e82-a2e2-4489-a8a0-42f579b5ccb2)
+![image](https://github.com/browserify/syntax-error/assets/99856936/eba90de3-94e8-4377-af4c-470691e0740c)
 
 Se incluyeron los siguientes plugins de Gstreamer
 
