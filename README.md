@@ -59,7 +59,8 @@ Para agregar recetas a la imagen se descarga del repositorio de kirkstone la ram
 git clone -b kirkstone https://github.com/openembedded/meta-openembedded.git
 ```
 Durante la creación se encontraron errores con diversas metas, debido a que no tienen compatibilidad con la versión `Kirkstone`, mostrando el siguiente error
->ERROR! Branch kirkstone in https://github.com/Xilinx/meta-jupyter.git does nor exist!
+
+>ERROR! Branch kirkstone in https://github.com/Xilinx/meta-jupyter.git does not exist!
 
 Si se ejecuta el comando de forma general sin buscar la compatibilidad con el comando 
 
@@ -68,7 +69,8 @@ git clone https://github.com/Xilinx/meta-jupyter.git
 ```
 Se produce un error integración al sistema al ambiente que estamos desarrollando, donde se muestra
 
->ERROR! repository avaible with Langdale version, try to chance branch
+>ERROR! repository available with Langdale version, try to change branch
+
 >Using checkout or command -b "branch name"
 
 Por lo que suspendió el uso de esta meta de momento.
