@@ -297,3 +297,20 @@ Lo que debría dar como resultado
 ![image](https://github.com/Jormq99/TSE-Proyecto_1_copy/assets/99856936/02f37803-97b6-4177-8aa4-2f6162775f1d)
 
 
+
+>ERROR! Una vez se corrió el modelo se produjo el siguiente error
+![image](https://github.com/browserify/syntax-error/assets/99856936/45fc1e82-a2e2-4489-a8a0-42f579b5ccb2)
+
+Se incluyeron los siguientes plugins de Gstreamer
+
+```vim
+VIDEO_TOOLS = " \
+            gstreamer1.0 \
+            gstreamer1.0-libav \
+            gstreamer1.0-plugins-good \ 
+            gstreamer1.0-plugins-base \ 
+            gstreamer1.0-plugins-bad \
+            gstreamer1.0-plugins-ugly \
+           "
+```
+
